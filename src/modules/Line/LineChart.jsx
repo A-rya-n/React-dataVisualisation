@@ -1,12 +1,12 @@
 import { Chart, CategoryScale } from "chart.js/auto";
 import { useState } from "react";
 import { Data } from "../Data/Data";
-import { Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 
 Chart.register(CategoryScale);
 
-const BarChart = () => {
-  const [BData] = useState({
+const LineChart = () => {
+  const [LData] = useState({
     labels: Data.map((data) => data.year),
     datasets: [
       {
@@ -27,9 +27,9 @@ const BarChart = () => {
 
   return (
     <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl">
-      <div className="font-sans font-medium mb-5">Bar Chart</div>
-      <Bar
-        data={BData}
+      <div className="font-sans font-medium mb-5">Line Chart</div>
+      <Line
+        data={LData}
         options={{
           plugins: {
             title: {
@@ -47,4 +47,4 @@ const BarChart = () => {
   );
 };
 
-export default BarChart;
+export default LineChart;
