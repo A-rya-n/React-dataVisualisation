@@ -3,12 +3,12 @@ import { Chart, CategoryScale } from "chart.js/auto";
 import { Data } from "../Data/Data";
 import { Line } from "react-chartjs-2";
 import { useSelector, useDispatch } from "react-redux";
-import { setLineData } from "./LineSlice";
+import { setLineChart } from "./LineSlice";
 
 Chart.register(CategoryScale);
 
 const LineChart = () => {
-  const LData = useSelector((state) => state.line.data);
+  const LData = useSelector((state) => state.line.chartData);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const LineChart = () => {
       ],
     };
 
-    dispatch(setLineData(LineDataset));
+    dispatch(setLineChart(LineDataset));
   }, [dispatch]);
 
   return (

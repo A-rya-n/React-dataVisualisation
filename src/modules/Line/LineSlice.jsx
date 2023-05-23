@@ -3,17 +3,25 @@ import { createSlice } from "@reduxjs/toolkit";
 const LineSlice = createSlice({
   name: "line",
   initialState: {
-    data: {
+    chartData: {
       labels: [],
       datasets: [],
     },
+    rechartData: {
+      year: "",
+      Usersg: "",
+      Usersl: "",
+    },
   },
   reducers: {
-    setLineData: (state, action) => {
-      state.data = action?.payload;
+    setLineChart: (state, action) => {
+      state.chartData = action.payload;
+    },
+    setLineRechart: (state, action) => {
+      state.rechartData = action.payload;
     },
   },
 });
 
-export const { setLineData } = LineSlice.actions;
+export const { setLineChart, setLineRechart } = LineSlice.actions;
 export default LineSlice.reducer;
