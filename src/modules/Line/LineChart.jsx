@@ -9,6 +9,7 @@ Chart.register(CategoryScale);
 
 const LineChart = () => {
   const LData = useSelector((state) => state.line.chartData);
+  const select = useSelector((state) => state.dropdown.selected);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -46,6 +47,10 @@ const LineChart = () => {
 
     dispatch(setLineChart(LineDataset));
   }, [dispatch]);
+
+  if (select !== "Chart.js") {
+    return null;
+  }
 
   return (
     <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl">

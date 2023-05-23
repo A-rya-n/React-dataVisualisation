@@ -2,10 +2,13 @@ import { Chart, CategoryScale } from "chart.js/auto";
 import { useState } from "react";
 import { Data } from "../Data/Data";
 import { Bar } from "react-chartjs-2";
+import { useSelector } from "react-redux";
 
 Chart.register(CategoryScale);
 
 const BarChart = () => {
+  const select = useSelector((state) => state.dropdown.selected);
+
   const [BData] = useState({
     labels: Data.map((data) => data.year),
     datasets: [
@@ -24,6 +27,10 @@ const BarChart = () => {
       },
     ],
   });
+
+  if (select !== "Chart.js") {
+    return null;
+  }
 
   return (
     <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl">

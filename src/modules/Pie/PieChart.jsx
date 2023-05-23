@@ -9,6 +9,7 @@ Chart.register(CategoryScale);
 
 const PieChart = () => {
   const PData = useSelector((state) => state.pie.data);
+  const select = useSelector((state) => state.dropdown.selected);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,6 +34,11 @@ const PieChart = () => {
 
     dispatch(setPieData(PieDataset));
   }, [dispatch]);
+
+  if (select !== "Chart.js") {
+    return null;
+  }
+
   return (
     <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl">
       <div className="font-sans font-medium mb-5">Pie Chart</div>

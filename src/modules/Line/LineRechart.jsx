@@ -14,6 +14,7 @@ import {
 
 const LineRechart = () => {
   const LData = useSelector((state) => state.line.rechartData);
+  const select = useSelector((state) => state.dropdown.selected);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,12 +26,16 @@ const LineRechart = () => {
     dispatch(setLineRechart(LineDataset));
   }, [dispatch]);
 
+  if (select !== "Recharts") {
+    return null;
+  }
+
   return (
     <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl">
       <div className="font-sans font-medium mb-5">Line Chart</div>
       <LineChart width={900} height={500} data={LData}>
         {console.log(LData)}
-        <CartesianGrid />
+        <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="year" />
         <YAxis />
         <Tooltip />
@@ -39,7 +44,7 @@ const LineRechart = () => {
           type="monotone"
           dataKey="Usersg"
           name="Users gained"
-          stroke="#8884d8"
+          stroke="#82ca9d"
         />
         <Line
           type="monotone"
