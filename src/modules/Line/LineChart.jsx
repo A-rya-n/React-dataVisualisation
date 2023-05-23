@@ -1,29 +1,51 @@
+import { useEffect } from "react";
 import { Chart, CategoryScale } from "chart.js/auto";
-import { useState } from "react";
 import { Data } from "../Data/Data";
 import { Line } from "react-chartjs-2";
+import { useSelector, useDispatch } from "react-redux";
+import { setLineData } from "./LineSlice";
 
 Chart.register(CategoryScale);
 
 const LineChart = () => {
-  const [LData] = useState({
-    labels: Data.map((data) => data.year),
-    datasets: [
-      {
-        label: "Users gained",
-        data: Data.map((data) => data.userGain),
-        backgroundColor: [
-          "rgba(75,192,192,1)",
-          "#ecf0f1",
-          "#50AF95",
-          "#f3ba2f",
-          "#2a71d0",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-    ],
-  });
+  const LData = useSelector((state) => state.line.data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const LineDataset = {
+      labels: Data.map((data) => data.year),
+      datasets: [
+        {
+          label: "Users gained",
+          data: Data.map((data) => data.userGain),
+          backgroundColor: [
+            "rgba(75,192,192,1)",
+            "#ecf0f1",
+            "#50AF95",
+            "#f3ba2f",
+            "#2a71d0",
+          ],
+          borderColor: "black",
+          borderWidth: 2,
+        },
+        {
+          label: "Users lost",
+          data: Data.map((data) => data.userLost),
+          backgroundColor: [
+            "rgba(75,192,192,1)",
+            "#ecf0f1",
+            "#50AF95",
+            "#f3ba2f",
+            "#2a71d0",
+          ],
+          borderColor: "black",
+          borderWidth: 2,
+        },
+      ],
+    };
+
+    dispatch(setLineData(LineDataset));
+  }, [dispatch]);
 
   return (
     <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl">
@@ -34,7 +56,7 @@ const LineChart = () => {
           plugins: {
             title: {
               display: true,
-              text: "Users gained between 2016 to 2020",
+              text: `Users gained / lost between 2016 to 2020`,
               color: "black",
             },
             legend: {

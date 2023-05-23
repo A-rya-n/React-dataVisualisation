@@ -12,13 +12,12 @@ const PieChart = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const PieDataset1 = {
+    const PieDataset = {
       labels: Data.map((data) => data.year),
-
       datasets: [
         {
           label: "Users gained",
-          data: Data.map((data) => data?.userGain),
+          data: Data.map((data) => data.userGain),
           backgroundColor: [
             "rgba(75,192,192,1)",
             "#ecf0f1",
@@ -32,7 +31,7 @@ const PieChart = () => {
       ],
     };
 
-    dispatch(setPieData(PieDataset1));
+    dispatch(setPieData(PieDataset));
   }, [dispatch]);
   return (
     <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl">
