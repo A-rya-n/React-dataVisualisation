@@ -1,6 +1,9 @@
 import logo from "./assets/DataIcon.png";
 import Dropdown from "./modules/dropdown/Dropdown";
 
+import { ChartsData } from "./modules/Charts/ChartsData";
+import { ReChartsData } from "./modules/Charts/ReChartsData";
+
 import PieChart from "./modules/Pie/PieChart";
 import BarChart from "./modules/Bar/BarChart";
 import LineChart from "./modules/Line/LineChart";
@@ -21,10 +24,13 @@ const App = () => {
           <Dropdown />
         </div>
         <div className="flex-wrap flex gap-10 m-auto">
+          <ChartsData />
+          <ReChartsData />
+
           <PieChart />
           <BarChart />
           <LineChart />
-          <LineRechart/>
+          <LineRechart />
         </div>
       </div>
     </div>

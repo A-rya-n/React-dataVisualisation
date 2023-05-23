@@ -1,7 +1,4 @@
-import { useEffect } from "react";
-import { Data } from "../Data/Data";
-import { useSelector, useDispatch } from "react-redux";
-import { setLineRechart } from "./LineSlice";
+import { useSelector } from "react-redux";
 import {
   LineChart,
   Line,
@@ -13,18 +10,8 @@ import {
 } from "recharts";
 
 const LineRechart = () => {
-  const LData = useSelector((state) => state.line.rechartData);
+  const LData = useSelector((state) => state.charts.rechartData);
   const select = useSelector((state) => state.dropdown.selected);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const LineDataset = Data.map((data) => ({
-      year: data.year,
-      Usersg: data.userGain,
-      Usersl: data.userLost,
-    }));
-    dispatch(setLineRechart(LineDataset));
-  }, [dispatch]);
 
   if (select !== "Recharts") {
     return null;

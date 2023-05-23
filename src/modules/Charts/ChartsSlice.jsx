@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const LineSlice = createSlice({
-  name: "line",
+const ChartsSlice = createSlice({
+  name: "charts",
   initialState: {
     chartData: {
       labels: [],
@@ -14,14 +14,14 @@ const LineSlice = createSlice({
     },
   },
   reducers: {
-    setLineChart: (state, action) => {
+    setChart: (state, action) => {
       state.chartData = action.payload;
     },
-    setLineRechart: (state, action) => {
+    setRechart: (state, action) => {
       state.rechartData = action.payload;
     },
   },
 });
 
-export const { setLineChart, setLineRechart } = LineSlice.actions;
-export default LineSlice.reducer;
+export const { setChart, setRechart } = ChartsSlice.actions;
+export default ChartsSlice.reducer;
