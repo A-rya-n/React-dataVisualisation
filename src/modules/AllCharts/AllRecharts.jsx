@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { Box, Tab } from "@mui/material";
 
+import { Box, Tab } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
+import BarChartIcon from "@mui/icons-material/BarChart";
+import ShowChartIcon from "@mui/icons-material/ShowChart";
 
 import LineRechart from "../Line/LineRechart";
 import BarRechart from "../Bar/BarRechart";
@@ -27,11 +29,12 @@ export default function AllRecharts() {
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <TabList
             onChange={handleChange}
-            textColor="secondary"
-            indicatorColor="secondary"
+            textColor="black"
+            indicatorColor="#ffffff"
+            centered
           >
-            <Tab label="Line Charts" value="1" />
-            <Tab label="Bar Charts" value="2" />
+            <Tab icon={<ShowChartIcon />} label="Line Charts" value="1" />
+            <Tab icon={<BarChartIcon />} label="Bar Charts" value="2" />
           </TabList>
         </Box>
         <TabPanel value="1">
