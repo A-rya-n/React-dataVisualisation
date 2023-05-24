@@ -15,6 +15,7 @@ const PieRechart = () => {
         <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl ml-5">
           <div className="font-sans font-medium mb-5">Pie Chart</div>
           <PieChart width={300} height={300}>
+            <Tooltip/>
             <Pie
               data={PData}
               dataKey="year"
@@ -22,7 +23,6 @@ const PieRechart = () => {
               cy="50%"
               outerRadius={70}
               fill="#8884d8"
-              label
             />
             <Pie
               data={PData}

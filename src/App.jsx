@@ -4,10 +4,7 @@ import Dropdown from "./modules/dropdown/Dropdown";
 import { ChartsData } from "./modules/Charts/ChartsData";
 import { ReChartsData } from "./modules/Charts/ReChartsData";
 
-import PieChart from "./modules/Pie/PieChart";
-import BarChart from "./modules/Bar/BarChart";
-import LineChart from "./modules/Line/LineChart";
-
+import AllChartsjs from "./modules/AllCharts/AllChartsjs";
 import AllRecharts from "./modules/AllCharts/AllRecharts";
 
 const App = () => {
@@ -27,10 +24,7 @@ const App = () => {
           <ChartsData />
           <ReChartsData />
 
-          <PieChart />
-          <BarChart />
-          <LineChart />
-
+          <AllChartsjs />
           <AllRecharts />
         </div>
       </div>
