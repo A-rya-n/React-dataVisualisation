@@ -8,7 +8,7 @@ import PieChart from "./modules/Pie/PieChart";
 import BarChart from "./modules/Bar/BarChart";
 import LineChart from "./modules/Line/LineChart";
 
-import LineRechart from "./modules/Line/LineRechart";
+import AllRecharts from "./modules/AllCharts/AllRecharts";
 
 const App = () => {
   return (
@@ -30,7 +30,8 @@ const App = () => {
           <PieChart />
           <BarChart />
           <LineChart />
-          <LineRechart />
+
+          <AllRecharts />
         </div>
       </div>
     </div>
