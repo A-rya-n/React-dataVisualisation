@@ -12,6 +12,10 @@ const ChartsSlice = createSlice({
       Usersg: "",
       Usersl: "",
     },
+    chartistData: {
+      labels: [],
+      series: [],
+    },
   },
   reducers: {
     setChart: (state, action) => {
@@ -20,8 +24,11 @@ const ChartsSlice = createSlice({
     setRechart: (state, action) => {
       state.rechartData = action.payload;
     },
+    setChartist: (state, action) => {
+      state.chartistData = action.payload;
+    },
   },
 });
 
-export const { setChart, setRechart } = ChartsSlice.actions;
+export const { setChart, setRechart, setChartist } = ChartsSlice.actions;
 export default ChartsSlice.reducer;
