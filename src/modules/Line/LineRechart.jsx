@@ -24,7 +24,7 @@ const LineRechart = () => {
       <div className="flex flex-wrap gap-10">
         <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl ml-5">
           <div className="font-sans font-medium mb-5">Line Chart</div>
-          <LineChart width={500} height={200} data={LData} syncId="LineID">
+          <LineChart width={500} height={300} data={LData} syncId="LineID">
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="year" />
             <YAxis />
