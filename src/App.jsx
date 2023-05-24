@@ -3,9 +3,11 @@ import Dropdown from "./modules/dropdown/Dropdown";
 
 import { ChartsData } from "./modules/Charts/ChartsData";
 import { ReChartsData } from "./modules/Charts/ReChartsData";
+// import { VictoryData } from "./modules/Charts/VictoryData";
 
 import AllChartsjs from "./modules/AllCharts/AllChartsjs";
 import AllRecharts from "./modules/AllCharts/AllRecharts";
+// import AllVictory from "./modules/AllCharts/AllVictory";
 
 const App = () => {
   return (
@@ -23,9 +25,11 @@ const App = () => {
         <div className="flex-wrap flex gap-10 m-auto">
           <ChartsData />
           <ReChartsData />
+          {/* <VictoryData /> */}
 
           <AllChartsjs />
           <AllRecharts />
+          {/* <AllVictory /> */}
         </div>
       </div>
     </div>

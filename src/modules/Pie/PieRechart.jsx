@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Pie, PieChart, Tooltip, Legend } from "recharts";
+import { Pie, PieChart, Tooltip } from "recharts";
 
 const PieRechart = () => {
   const PData = useSelector((state) => state.charts.rechartData);
