@@ -17,7 +17,6 @@ const Dropdown = () => {
         <option value="">Select chart</option>
         <option value="Chart.js">Chart.js</option>
         <option value="Recharts">Recharts</option>
-        <option value="Chartist">Chartist</option>
       </select>
     </div>
   );
