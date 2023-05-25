@@ -18,7 +18,6 @@ const ChartsSlice = createSlice({
       z: "",
     },
     nivoData: {
-      id: "",
       data: [],
     },
   },

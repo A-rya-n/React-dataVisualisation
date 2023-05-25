@@ -8,14 +8,23 @@ export const NivoData = () => {
 
   useEffect(() => {
     const Dataset = Data.map((data) => ({
-      id: data.id,
-      data: [
-        { x: data.year, y: data.userGain },
-        { x: data.year, y: data.userLost },
-      ],
+      id: data.year,
+      data: [{ x: data.userGain, y: data.userLost }],
     }));
     dispatch(setNivo(Dataset));
   }, [dispatch]);
 
   return null;
 };
+
+// [
+//   {
+//     id: 1,
+//     data: [
+//       {
+//         x: "palne",
+//         y: 12,
+//       },
+//     ],
+//   },
+// ];
