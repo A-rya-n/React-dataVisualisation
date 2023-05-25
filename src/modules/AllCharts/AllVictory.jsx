@@ -7,6 +7,7 @@ import ShowChartIcon from "@mui/icons-material/ShowChart";
 import PieChartIcon from "@mui/icons-material/PieChart";
 
 import PieVictory from "../Pie/PieVictory";
+import BarVictory from "../Bar/BarVictory";
 
 import { useSelector } from "react-redux";
 
@@ -38,6 +39,9 @@ export default function AllVictory() {
             <Tab icon={<PieChartIcon />} label="Pie Charts" value="3" />
           </TabList>
         </Box>
+        <TabPanel value="2">
+          <BarVictory />
+        </TabPanel>
         <TabPanel value="3">
           <PieVictory />
         </TabPanel>

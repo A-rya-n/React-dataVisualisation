@@ -10,7 +10,7 @@ export const VictoryData = () => {
     const Dataset = Data.map((data) => ({
       x: data.year,
       y: data.userGain,
-      //   z: data.userLost,
+      z: data.userLost,
     }));
     dispatch(setVictory(Dataset));
   }, [dispatch]);

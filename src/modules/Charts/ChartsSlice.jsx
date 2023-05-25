@@ -15,6 +15,7 @@ const ChartsSlice = createSlice({
     victoryData: {
       x: "",
       y: "",
+      z: "",
     },
     nivoData: {
       id: "",
