@@ -4,10 +4,12 @@ import Dropdown from "./modules/dropdown/Dropdown";
 import { ChartsData } from "./modules/Charts/ChartsData";
 import { ReChartsData } from "./modules/Charts/ReChartsData";
 // import { VictoryData } from "./modules/Charts/VictoryData";
+import { NivoData } from "./modules/Charts/NivoData";
 
 import AllChartsjs from "./modules/AllCharts/AllChartsjs";
 import AllRecharts from "./modules/AllCharts/AllRecharts";
 // import AllVictory from "./modules/AllCharts/AllVictory";
+import AllNivo from "./modules/AllCharts/AllNivo";
 
 const App = () => {
   return (
@@ -26,10 +28,12 @@ const App = () => {
           <ChartsData />
           <ReChartsData />
           {/* <VictoryData /> */}
+          <NivoData />
 
           <AllChartsjs />
           <AllRecharts />
           {/* <AllVictory /> */}
+          <AllNivo />
         </div>
       </div>
     </div>

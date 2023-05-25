@@ -13,7 +13,10 @@ const BarChart = () => {
   }
 
   return (
-    <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl">
+    <div
+      className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl"
+      style={{ width: 500, height: 300 }}
+    >
       <div className="font-sans font-medium mb-5">Bar Chart</div>
       <Bar
         data={BData}

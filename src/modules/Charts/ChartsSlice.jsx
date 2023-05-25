@@ -16,6 +16,10 @@ const ChartsSlice = createSlice({
       x: "",
       y: "",
     },
+    nivoData: {
+      id: "",
+      data: [],
+    },
   },
   reducers: {
     setChart: (state, action) => {
@@ -27,8 +31,12 @@ const ChartsSlice = createSlice({
     setVictory: (state, action) => {
       state.victoryData = action.payload;
     },
+    setNivo: (state, action) => {
+      state.nivoData = action.payload;
+    },
   },
 });
 
-export const { setChart, setRechart, setVictory } = ChartsSlice.actions;
+export const { setChart, setRechart, setVictory, setNivo } =
+  ChartsSlice.actions;
 export default ChartsSlice.reducer;
