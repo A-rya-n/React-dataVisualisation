@@ -8,14 +8,16 @@ const ChartsSlice = createSlice({
       datasets: [],
     },
     rechartData: {
-      year: "",
-      Usersg: "",
-      Usersl: "",
+      // year: "",
+      // Usersg: "",
+      // Usersl: "",
+      data: [],
     },
     victoryData: {
-      x: "",
-      y: "",
-      z: "",
+      // x: "",
+      // y: "",
+      // z: "",
+      data: [],
     },
     nivoData: {
       data: [],

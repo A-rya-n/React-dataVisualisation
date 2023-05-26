@@ -44,7 +44,7 @@ const PieNivo = () => {
   return (
     <div
       className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl"
-      style={{ width: 700, height: 500 }}
+      style={{ width: 750, height: 500 }}
     >
       <div className="font-sans font-medium mb-5">Pie Chart</div>
       {console.log(dataset)}
