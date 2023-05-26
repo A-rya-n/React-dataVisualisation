@@ -8,6 +8,7 @@ import PieChartIcon from "@mui/icons-material/PieChart";
 
 import LineNivo from "../Line/LineNivo";
 import BarNivo from "../Bar/BarNivo";
+import PieNivo from "../Pie/PieNivo";
 
 import { useSelector } from "react-redux";
 
@@ -44,6 +45,9 @@ export default function AllNivo() {
         </TabPanel>
         <TabPanel value="2">
           <BarNivo />
+        </TabPanel>
+        <TabPanel value="3">
+          <PieNivo />
         </TabPanel>
       </TabContext>
     </Box>
