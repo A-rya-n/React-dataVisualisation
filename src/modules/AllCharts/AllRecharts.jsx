@@ -10,6 +10,7 @@ import LineRechart from "../Line/LineRechart";
 import BarRechart from "../Bar/BarRechart";
 import PieRechart from "../Pie/PieRechart";
 import LineReal from "../Line/LineReal";
+import LineInflux from "../Line/LineInflux";
 
 import { useSelector } from "react-redux";
 
@@ -44,6 +45,11 @@ export default function AllRecharts() {
               label="Line Charts - Real Time"
               value="4"
             />
+            <Tab
+              icon={<ShowChartIcon />}
+              label="Line Charts - Influx data"
+              value="5"
+            />
           </TabList>
         </Box>
         <TabPanel value="1">
@@ -57,6 +63,9 @@ export default function AllRecharts() {
         </TabPanel>
         <TabPanel value="4">
           <LineReal />
+        </TabPanel>
+        <TabPanel value="5">
+          <LineInflux />
         </TabPanel>
       </TabContext>
     </Box>
