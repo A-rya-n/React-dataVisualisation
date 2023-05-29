@@ -9,6 +9,7 @@ import PieChartIcon from "@mui/icons-material/PieChart";
 import LineRechart from "../Line/LineRechart";
 import BarRechart from "../Bar/BarRechart";
 import PieRechart from "../Pie/PieRechart";
+import LineReal from "../Line/LineReal";
 
 import { useSelector } from "react-redux";
 
@@ -38,6 +39,11 @@ export default function AllRecharts() {
             <Tab icon={<ShowChartIcon />} label="Line Charts" value="1" />
             <Tab icon={<BarChartIcon />} label="Bar Charts" value="2" />
             <Tab icon={<PieChartIcon />} label="Pie Charts" value="3" />
+            <Tab
+              icon={<ShowChartIcon />}
+              label="Line Charts - Real Time"
+              value="4"
+            />
           </TabList>
         </Box>
         <TabPanel value="1">
@@ -48,6 +54,9 @@ export default function AllRecharts() {
         </TabPanel>
         <TabPanel value="3">
           <PieRechart />
+        </TabPanel>
+        <TabPanel value="4">
+          <LineReal />
         </TabPanel>
       </TabContext>
     </Box>

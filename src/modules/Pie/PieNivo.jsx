@@ -47,7 +47,7 @@ const PieNivo = () => {
       style={{ width: 750, height: 500 }}
     >
       <div className="font-sans font-medium mb-5">Pie Chart</div>
-      {console.log(dataset)}
+      {/* {console.log(dataset)} */}
       <ResponsivePie
         data={dataset}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}

@@ -8,18 +8,15 @@ const ChartsSlice = createSlice({
       datasets: [],
     },
     rechartData: {
-      // year: "",
-      // Usersg: "",
-      // Usersl: "",
       data: [],
     },
     victoryData: {
-      // x: "",
-      // y: "",
-      // z: "",
       data: [],
     },
     nivoData: {
+      data: [],
+    },
+    realData: {
       data: [],
     },
   },
@@ -36,9 +33,12 @@ const ChartsSlice = createSlice({
     setNivo: (state, action) => {
       state.nivoData = action.payload;
     },
+    setReal: (state, action) => {
+      state.realData = action.payload;
+    },
   },
 });
 
-export const { setChart, setRechart, setVictory, setNivo } =
+export const { setChart, setRechart, setVictory, setNivo, setReal } =
   ChartsSlice.actions;
 export default ChartsSlice.reducer;

@@ -123,8 +123,8 @@ const BarNivo = () => {
       style={{ height: 500, width: 750 }}
     >
       <div className="font-sans font-medium mb-5">Bar Chart</div>
-      {console.log(dataset)}
-      {console.log(BData)}
+      {/* {console.log(dataset)}
+      {console.log(BData)} */}
       <ResponsiveBar
         data={dataset}
         keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
