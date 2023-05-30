@@ -4,6 +4,8 @@ import { setReal } from "../Charts/ChartsSlice";
 import {
   Line,
   LineChart,
+  Area,
+  AreaChart,
   CartesianGrid,
   XAxis,
   YAxis,
@@ -23,7 +25,7 @@ const LineReal = () => {
       "wss://ws.finnhub.io?token=cho606hr01qrto3vbrugcho606hr01qrto3vbrv0"
     );
 
-    socket.addEventListener("open", function (event) {
+    socket.addEventListener("open", function () {
       socket.send(
         JSON.stringify({ type: "subscribe", symbol: "BINANCE:BTCUSDT" })
       );
@@ -89,7 +91,7 @@ const LineReal = () => {
           <LineChart width={800} height={400} data={RData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="time" />
-            <YAxis domain={[27900, 28000]}/>
+            <YAxis domain={[27650, 27800]} />
             <Tooltip />
             <Legend />
             <Line
@@ -117,6 +119,26 @@ const LineReal = () => {
               fill="#4287f5"
             />
           </LineChart>
+        </div>
+        <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl">
+          <div className="font-sans font-medium mb-5">
+            Area Chart - Real Time
+          </div>
+          <AreaChart width={500} height={400} data={RData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="time" />
+            <YAxis domain={[27600, 27800]} />
+            <Tooltip />
+            <Legend />
+            <Area
+              type="monotone"
+              dataKey="price1"
+              name="Binance"
+              stroke="#82ca9d"
+              strokeWidth={2}
+              fill="#82ca9d"
+            />
+          </AreaChart>
         </div>
       </div>
     </div>
