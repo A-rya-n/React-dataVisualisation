@@ -4,6 +4,7 @@ import { ResponsiveLine } from "@nivo/line";
 const LineNivo = () => {
   const LData = useSelector((state) => state.charts.nivoData);
   const select = useSelector((state) => state.dropdown.selected);
+  const IData = useSelector((state) => state.charts.nivoInfluxData);
 
   if (select !== "Nivo") {
     return null;
@@ -12,7 +13,7 @@ const LineNivo = () => {
     <div className="flex flex-wrap gap-5">
       <div
         className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl"
-        style={{ width: 750, height: 500 }}
+        style={{ width: 650, height: 500 }}
       >
         <div className="font-sans font-medium mb-5">Line Chart</div>
         <ResponsiveLine
@@ -76,6 +77,48 @@ const LineNivo = () => {
               ],
             },
           ]}
+        />
+      </div>
+      <div
+        className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl"
+        style={{ width: 750, height: 500 }}
+      >
+        <div className="font-sans font-medium mb-5">Line Chart - Influx</div>
+        {console.log("Ldata: ", LData)}
+        {console.log("Idata: ", IData)}
+        <ResponsiveLine
+          data={IData}
+          margin={{ top: 50, right: 110, bottom: 70, left: 60 }}
+          xScale={{ type: "point" }}
+          yScale={{
+            type: "linear",
+            min: "auto",
+            max: "auto",
+          }}
+          axisTop={null}
+          axisRight={null}
+          axisBottom={{
+            tickSize: 5,
+            tickPadding: 5,
+            tickRotation: 0,
+            legend: "Time",
+            legendOffset: 36,
+            legendPosition: "middle",
+          }}
+          axisLeft={{
+            tickSize: 5,
+            tickPadding: 5,
+            tickRotation: 0,
+            legend: "Power",
+            legendOffset: -40,
+            legendPosition: "middle",
+          }}
+          pointSize={10}
+          pointColor={{ theme: "background" }}
+          pointBorderWidth={2}
+          pointBorderColor={{ from: "serieColor" }}
+          pointLabelYOffset={-12}
+          useMesh={true}
         />
       </div>
     </div>

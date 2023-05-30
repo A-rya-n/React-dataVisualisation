@@ -1,11 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { setInflux } from "./ChartsSlice";
+import { setInflux, setNivoInflux } from "./ChartsSlice";
 
 export const InfluxData = () => {
   const dispatch = useDispatch();
 
   const dataAccumulator = [];
+  const dataAccumulatorNivo = [];
+
+  let idCounter = 0;
 
   useEffect(() => {
     function fetchData() {
@@ -16,15 +19,32 @@ export const InfluxData = () => {
             time: formatTime(d.Date),
             power: d.Value,
           }));
+          const formattedDataNivo = [
+            {
+              id: ++idCounter,
+              data: data.map((d) => ({
+                x: formatTime(d.Date),
+                y: d.Value,
+              })),
+            },
+          ];
 
           dataAccumulator.push(formattedData);
+          dataAccumulatorNivo.push(formattedDataNivo);
 
-          if (dataAccumulator.length === 24) {
+          if (
+            dataAccumulator.length === 24 &&
+            dataAccumulatorNivo.length === 24
+          ) {
             dataAccumulator.splice(0, dataAccumulator - 12);
+            dataAccumulatorNivo.splice(0, dataAccumulatorNivo - 12);
           }
 
           dispatch(setInflux(...dataAccumulator));
+          dispatch(setNivoInflux(...dataAccumulatorNivo));
+
           dataAccumulator.length = 0;
+          dataAccumulatorNivo.length = 0;
         })
         .catch((error) => {
           console.error("Error:", error);

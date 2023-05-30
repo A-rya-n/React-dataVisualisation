@@ -90,7 +90,7 @@ const LineReal = () => {
           <LineChart width={800} height={400} data={RData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="time" />
-            <YAxis domain={[27650, 27800]} />
+            <YAxis domain={[27650, 28000]} />
             <Tooltip />
             <Legend />
             <Line
@@ -126,7 +126,7 @@ const LineReal = () => {
           <AreaChart width={500} height={400} data={RData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="time" />
-            <YAxis domain={[27600, 27800]} />
+            <YAxis domain={[27600, 28000]} />
             <Tooltip />
             <Legend />
             <Area

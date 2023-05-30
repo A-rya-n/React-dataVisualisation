@@ -22,6 +22,9 @@ const ChartsSlice = createSlice({
     influxData: {
       data: [],
     },
+    nivoInfluxData: {
+      data: [],
+    }
   },
   reducers: {
     setChart: (state, action) => {
@@ -42,9 +45,12 @@ const ChartsSlice = createSlice({
     setInflux: (state, action) => {
       state.influxData = action.payload;
     },
+    setNivoInflux: (state, action) => {
+      state.nivoInfluxData = action.payload;
+    },
   },
 });
 
-export const { setChart, setRechart, setVictory, setNivo, setReal, setInflux } =
+export const { setChart, setRechart, setVictory, setNivo, setReal, setInflux, setNivoInflux } =
   ChartsSlice.actions;
 export default ChartsSlice.reducer;
