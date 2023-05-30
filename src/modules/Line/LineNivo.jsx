@@ -88,7 +88,7 @@ const LineNivo = () => {
         {console.log("Idata: ", IData)}
         <ResponsiveLine
           data={IData}
-          margin={{ top: 50, right: 110, bottom: 70, left: 60 }}
+          margin={{ top: 20, right: 10, bottom: 70, left: 60 }}
           xScale={{ type: "point" }}
           yScale={{
             type: "linear",
