@@ -36,7 +36,6 @@ const LineReal = () => {
     // Listen for messages
     socket.addEventListener("message", function (event) {
       const data = JSON.parse(event.data);
-      console.log(data);
 
       const timestamp = data.data[0].t;
       const dateObj = new Date(timestamp);

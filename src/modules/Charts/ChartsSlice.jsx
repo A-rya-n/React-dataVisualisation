@@ -19,6 +19,9 @@ const ChartsSlice = createSlice({
     realData: {
       data: [],
     },
+    influxData: {
+      data: [],
+    },
   },
   reducers: {
     setChart: (state, action) => {
@@ -36,9 +39,12 @@ const ChartsSlice = createSlice({
     setReal: (state, action) => {
       state.realData = action.payload;
     },
+    setInflux: (state, action) => {
+      state.influxData = action.payload;
+    },
   },
 });
 
-export const { setChart, setRechart, setVictory, setNivo, setReal } =
+export const { setChart, setRechart, setVictory, setNivo, setReal, setInflux } =
   ChartsSlice.actions;
 export default ChartsSlice.reducer;

@@ -5,6 +5,7 @@ import { ChartsData } from "./modules/Charts/ChartsData";
 import { ReChartsData } from "./modules/Charts/ReChartsData";
 import { VictoryData } from "./modules/Charts/VictoryData";
 import { NivoData } from "./modules/Charts/NivoData";
+import { InfluxData } from "./modules/Charts/InfluxData";
 
 import AllChartsjs from "./modules/AllCharts/AllChartsjs";
 import AllRecharts from "./modules/AllCharts/AllRecharts";
@@ -29,6 +30,7 @@ const App = () => {
           <ReChartsData />
           <VictoryData />
           <NivoData />
+          <InfluxData />
 
           <AllChartsjs />
           <AllRecharts />
