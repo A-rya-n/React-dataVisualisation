@@ -21,12 +21,18 @@ const BarVictory = () => {
           </VictoryStack>
         </VictoryChart>
       </div>
-      <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl ml-5">
-        <div className="font-sans font-medium mb-5">Bar Chart - Influx</div>
-        <VictoryChart domainPadding={20} theme={VictoryTheme.material} width={800}>
-          <VictoryBar data={IData} x="time" y="power" />
-        </VictoryChart>
-      </div>
+      {IData.data.length !== 0 ? (
+        <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl ml-5">
+          <div className="font-sans font-medium mb-5">Bar Chart - Influx</div>
+          <VictoryChart
+            domainPadding={20}
+            theme={VictoryTheme.material}
+            width={800}
+          >
+            <VictoryBar data={IData} x="time" y="power" />
+          </VictoryChart>
+        </div>
+      ) : null}
     </div>
   );
 };

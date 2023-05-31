@@ -79,48 +79,48 @@ const LineNivo = () => {
           ]}
         />
       </div>
-      <div
-        className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl"
-        style={{ width: 750, height: 500 }}
-      >
-        <div className="font-sans font-medium mb-5">Line Chart - Influx</div>
-        {console.log("Ldata: ", LData)}
-        {console.log("Idata: ", IData)}
-        <ResponsiveLine
-          data={IData}
-          margin={{ top: 20, right: 10, bottom: 70, left: 60 }}
-          xScale={{ type: "point" }}
-          yScale={{
-            type: "linear",
-            min: "auto",
-            max: "auto",
-          }}
-          axisTop={null}
-          axisRight={null}
-          axisBottom={{
-            tickSize: 5,
-            tickPadding: 5,
-            tickRotation: 0,
-            legend: "Time",
-            legendOffset: 36,
-            legendPosition: "middle",
-          }}
-          axisLeft={{
-            tickSize: 5,
-            tickPadding: 5,
-            tickRotation: 0,
-            legend: "Power",
-            legendOffset: -40,
-            legendPosition: "middle",
-          }}
-          pointSize={10}
-          pointColor={{ theme: "background" }}
-          pointBorderWidth={2}
-          pointBorderColor={{ from: "serieColor" }}
-          pointLabelYOffset={-12}
-          useMesh={true}
-        />
-      </div>
+      {IData.data.length !== 0 ? (
+        <div
+          className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl"
+          style={{ width: 750, height: 500 }}
+        >
+          <div className="font-sans font-medium mb-5">Line Chart - Influx</div>
+          <ResponsiveLine
+            data={IData}
+            margin={{ top: 20, right: 10, bottom: 70, left: 60 }}
+            xScale={{ type: "point" }}
+            yScale={{
+              type: "linear",
+              min: "auto",
+              max: "auto",
+            }}
+            axisTop={null}
+            axisRight={null}
+            axisBottom={{
+              tickSize: 5,
+              tickPadding: 5,
+              tickRotation: 0,
+              legend: "Time",
+              legendOffset: 36,
+              legendPosition: "middle",
+            }}
+            axisLeft={{
+              tickSize: 5,
+              tickPadding: 5,
+              tickRotation: 0,
+              legend: "Power",
+              legendOffset: -40,
+              legendPosition: "middle",
+            }}
+            pointSize={10}
+            pointColor={{ theme: "background" }}
+            pointBorderWidth={2}
+            pointBorderColor={{ from: "serieColor" }}
+            pointLabelYOffset={-12}
+            useMesh={true}
+          />
+        </div>
+      ) : null}
     </div>
   );
 };

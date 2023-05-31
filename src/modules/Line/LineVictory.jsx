@@ -37,20 +37,26 @@ const LineVictory = () => {
           </VictoryStack>
         </VictoryChart>
       </div>
-      <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl ml-5">
-        <div className="font-sans font-medium mb-5">Line Chart - Influx</div>
-        <VictoryChart domainPadding={20} theme={VictoryTheme.material} width={800}>
-          <VictoryLine
-            data={IData}
-            x="time"
-            y="power"
-            style={{
-              data: { stroke: "#589117" },
-              parent: { border: "1px solid #ccc" },
-            }}
-          />
-        </VictoryChart>
-      </div>
+      {IData.data.length !== 0 ? (
+        <div className="w-auto h-auto bg-slate-200 p-5 rounded-xl shadow-xl ml-5">
+          <div className="font-sans font-medium mb-5">Line Chart - Influx</div>
+          <VictoryChart
+            domainPadding={20}
+            theme={VictoryTheme.material}
+            width={800}
+          >
+            <VictoryLine
+              data={IData}
+              x="time"
+              y="power"
+              style={{
+                data: { stroke: "#589117" },
+                parent: { border: "1px solid #ccc" },
+              }}
+            />
+          </VictoryChart>
+        </div>
+      ) : null}
     </div>
   );
 };
